@@ -1,5 +1,7 @@
 package br.com.zup.cliente
 
+import br.com.zup.KeyManagerDetalhaServiceGrpc
+import br.com.zup.KeyManagerListaServiceGrpc
 import br.com.zup.KeyManagerRegistraServiceGrpc
 import br.com.zup.KeyManagerRemoveServiceGrpc
 import io.grpc.ManagedChannel
@@ -15,5 +17,11 @@ class GrpcClientFactory(@GrpcChannel("keyManager")val channel: ManagedChannel) {
 
     @Singleton
     fun removeChave() = KeyManagerRemoveServiceGrpc.newBlockingStub(channel)
+
+    @Singleton
+    fun consultaChave() = KeyManagerDetalhaServiceGrpc.newBlockingStub(channel)
+
+    @Singleton
+    fun listaChave() = KeyManagerListaServiceGrpc.newBlockingStub(channel)
 
 }

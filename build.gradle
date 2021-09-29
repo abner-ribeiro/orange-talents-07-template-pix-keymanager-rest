@@ -41,9 +41,12 @@ dependencies {
 
     kapt("io.micronaut.openapi:micronaut-openapi")
 
+    testImplementation("org.mockito:mockito-core")
+    testImplementation("org.mockito:mockito-junit-jupiter:3.8.0")
     testImplementation("org.testcontainers:junit-jupiter")
-    testImplementation("org.testcontainers:postgresql")
     testImplementation("org.testcontainers:testcontainers")
+    testImplementation("org.mockito:mockito-inline:3.8.0")
+    testImplementation("io.micronaut:micronaut-http-client")
     implementation("io.micronaut:micronaut-validation")
 
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
